@@ -1,0 +1,27 @@
+{{ define "index" }}
+
+{{ template "header" }}
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main role ="main" class="inner cover">
+        <h1 class="cover-heading">Главная</h1>
+        <p class="lead">Lorem </p>
+
+        {{ range . }}
+        <div class="alert alert-danger">
+            <h2>{{ .Title }}</h2>
+            <p>{{ .Anons }}</p>
+            <a href="/post/{{ .Id }}" class="btn btn-danger">Читать далее</a>
+        </div>
+        {{ else}}
+        <p class="lead">Статей нет!</p>
+        {{ end }}
+        <p class="lead">
+            <a href="/contacts" class="btn btn-lg btn-secondary ">Узнать больше</a>
+        </p>
+    </main>
+</div>
+
+{{ template "footer" }}
+
+{{ end }}
